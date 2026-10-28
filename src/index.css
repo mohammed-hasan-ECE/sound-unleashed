@@ -96,6 +96,36 @@
 }
 
 /* ============================================
+   WIZARD STEP TRANSITION
+   A brief fade for finder steps. Steps swap in
+   place, so only opacity + 6px of translate are
+   animated; reduced-motion users get the final
+   state immediately.
+   ============================================ */
+@keyframes su-step-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 6px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.su-step-in {
+  animation: su-step-in 0.22s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .su-step-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ============================================
    BASE
    IMPORTANT: these rules live in @layer base so
    that Tailwind's utilities layer (declared

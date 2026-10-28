@@ -1,6 +1,7 @@
 export { HomePage } from './HomePage'
 export { AboutPage } from './AboutPage'
 export { CatalogPage } from './CatalogPage'
+export { FinderPage } from './FinderPage'
 export { ProductDetailPage } from './ProductDetailPage'
 export { SavedPage } from './SavedPage'
 export { CartPage } from './CartPage'

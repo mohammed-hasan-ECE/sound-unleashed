@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
-import { ArrowRight, ShoppingCart, Star, Heart } from 'lucide-react'
+import { ArrowRight, ShoppingCart, Sparkles, Star, Heart } from 'lucide-react'
 import { useShop } from '@/context/ShopContext'
 import { resolveProductImage } from '@/components/product/product-images'
 
@@ -14,6 +14,8 @@ interface ProductCardProps {
   imageUrl: string | null
   price: number | null
   priceType: 'listing' | 'mrp' | 'catalogue'
+  /** Optional, truthful explanation shown when a card appears in a set of results. */
+  reason?: string
 }
 
 export function ProductCard({
@@ -26,6 +28,7 @@ export function ProductCard({
   imageUrl,
   price,
   priceType,
+  reason,
 }: ProductCardProps) {
   const { isSaved, toggleSaved, isLiked, toggleLike, addToCart } = useShop()
 
@@ -86,6 +89,16 @@ export function ProductCard({
         </h3>
         <p className="text-sm font-semibold text-brand-primary">{brand}</p>
         <p className="line-clamp-2 text-sm text-muted-foreground">{description}</p>
+
+        {reason && (
+          <p className="rounded-xl bg-lavender-soft px-3 py-2 text-xs leading-relaxed text-brand-primary-dark">
+            <Sparkles
+              className="mr-1.5 inline h-3.5 w-3.5 align-[-2px]"
+              aria-hidden="true"
+            />
+            {reason}
+          </p>
+        )}
 
         {/* Actions pinned to the card bottom */}
         <div className="mt-auto flex flex-col gap-3 pt-3">

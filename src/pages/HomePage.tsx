@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
-import { ArrowDown, ArrowRight, Globe, Guitar, Headphones, List, Music } from 'lucide-react'
+import { ArrowDown, ArrowRight, Compass, Globe, Guitar, Headphones, List, Music } from 'lucide-react'
 import { products } from '@/data/products'
 import { ProductCard } from '@/components/product/ProductCard'
 import { BrandLogo } from '@/components/brand/BrandLogo'
@@ -240,6 +240,77 @@ export function HomePage() {
               </Button>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ============ GUIDED FINDER ============ */}
+      <section className="hero-surface relative overflow-hidden rounded-3xl p-8 md:p-12">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-24 -right-20 h-64 w-64 rounded-full bg-brand-primary/30 blur-3xl"
+        />
+
+        <div className="relative grid gap-8 lg:grid-cols-[1.35fr_1fr] lg:items-center lg:gap-12">
+          <div>
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] font-semibold tracking-[0.14em] text-brand-light uppercase">
+              <Compass className="h-3.5 w-3.5" aria-hidden="true" />
+              Guided discovery
+            </span>
+            <h2 className="mt-4 text-3xl font-bold tracking-tight text-balance text-white sm:text-4xl">
+              Not sure where to start?
+            </h2>
+            <p className="mt-3 max-w-xl leading-relaxed text-white/80">
+              Tell us what you&apos;re interested in, and we&apos;ll help you explore the
+              instruments and equipment available in Sound Unleashed.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <Button
+                size="lg"
+                asChild
+                className="bg-white text-brand-deep shadow-lg hover:bg-lavender focus-visible:ring-white focus-visible:ring-offset-brand-deep"
+              >
+                <Link to="/finder">
+                  Help Me Find My Sound
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <span className="text-xs text-white/60">
+                Three quick questions. No account needed.
+              </span>
+            </div>
+          </div>
+
+          <ol className="grid gap-3">
+            {[
+              {
+                title: 'Pick your interests',
+                text: 'Choose the instrument categories you want to explore.',
+              },
+              {
+                title: 'Tell us your goal',
+                text: 'Prioritise related categories in your matches.',
+              },
+              {
+                title: 'Set an optional budget',
+                text: 'Narrow results by recorded listing price.',
+              },
+            ].map((item, index) => (
+              <li
+                key={item.title}
+                className="flex items-start gap-3 rounded-2xl border border-white/15 bg-white/5 p-4"
+              >
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/15 text-sm font-bold text-white">
+                  {index + 1}
+                </span>
+                <span>
+                  <span className="block text-sm font-semibold text-white">{item.title}</span>
+                  <span className="mt-0.5 block text-xs leading-relaxed text-white/70">
+                    {item.text}
+                  </span>
+                </span>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 

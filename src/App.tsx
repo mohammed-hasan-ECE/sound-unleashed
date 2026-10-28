@@ -5,6 +5,7 @@ import { SiteLayout } from '@/components/layout/SiteLayout'
 import { HomePage } from '@/pages/HomePage'
 import { AboutPage } from '@/pages/AboutPage'
 import { CatalogPage } from '@/pages/CatalogPage'
+import { FinderPage } from '@/pages/FinderPage'
 import { ProductDetailPage } from '@/pages/ProductDetailPage'
 import { SavedPage } from '@/pages/SavedPage'
 import { CartPage } from '@/pages/CartPage'
@@ -26,6 +27,7 @@ function App() {
           <Route path="/" element={<SiteLayout />}>
             <Route index element={<HomePage />} />
             <Route path="purchase" element={<CatalogPage />} />
+            <Route path="finder" element={<FinderPage />} />
             <Route path="product/:slug" element={<ProductDetailPage />} />
             <Route path="saved" element={<SavedPage />} />
             <Route path="cart" element={<CartPage />} />
