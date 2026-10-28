@@ -4,6 +4,7 @@ import { products } from '@/data/products'
 import { useShop } from '@/context/ShopContext'
 import { Button } from '@/components/ui/button'
 import { ProductCard } from '@/components/product/ProductCard'
+import { getDisplayPrice } from '@/lib/catalogue'
 
 export function SavedPage() {
   const { savedIds } = useShop()
@@ -47,24 +48,7 @@ export function SavedPage() {
       {/* Shared product grid — save control toggles items out of this list */}
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {savedProducts.map((product) => {
-          const listingOffer = product.offers.find(
-            (o) => o.priceType === 'listing' && o.price !== null
-          )
-          const mrpOffer = product.offers.find(
-            (o) => o.priceType === 'mrp' && o.price !== null
-          )
-          const price =
-            listingOffer !== undefined
-              ? listingOffer.price
-              : mrpOffer !== undefined
-                ? mrpOffer.price
-                : null
-          const priceType =
-            listingOffer !== undefined
-              ? listingOffer.priceType
-              : mrpOffer !== undefined
-                ? mrpOffer.priceType
-                : 'listing'
+          const { price, priceType } = getDisplayPrice(product)
 
           return (
             <ProductCard

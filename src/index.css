@@ -18,6 +18,7 @@
   --color-brand-primary-dark: #6d28d9; /* strong hover purple */
   --color-brand-deep: #251036;         /* deep aubergine */
   --color-brand-dark: #39205c;         /* dark violet */
+  --color-brand-light: #b79cff;        /* light violet for text on dark surfaces */
 
   /* Text */
   --color-text: #281e35;
@@ -47,6 +48,51 @@
   background-image:
     radial-gradient(ellipse 55% 70% at 88% 12%, rgba(134, 59, 255, 0.38), transparent 62%),
     linear-gradient(135deg, #251036 0%, #39205c 52%, #863bff 118%);
+}
+
+/* ============================================
+   HERO REVEAL
+   A brief, staggered entrance for the homepage
+   brand lockup. Only opacity + a few pixels of
+   translate are animated, so nothing reflows and
+   no layout shift occurs. Total sequence: ~770ms.
+   ============================================ */
+@keyframes su-reveal-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.su-reveal {
+  animation: su-reveal-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Stagger: lockup → headline → copy → actions → artwork */
+.su-reveal-1 { animation-delay: 0ms; }
+.su-reveal-2 { animation-delay: 80ms; }
+.su-reveal-3 { animation-delay: 150ms; }
+.su-reveal-4 { animation-delay: 210ms; }
+.su-reveal-5 { animation-delay: 270ms; }
+
+/* Users who ask for less motion get the finished state immediately. */
+@media (prefers-reduced-motion: reduce) {
+  .su-reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Smooth anchor scrolling (e.g. “Browse Categories”) only when motion is welcome. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /* ============================================
