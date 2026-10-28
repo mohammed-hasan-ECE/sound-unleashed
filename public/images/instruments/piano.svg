@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3d3d47"/>
+      <stop offset="1" stop-color="#1a1a22"/>
+    </linearGradient>
+    <linearGradient id="keybed" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e8e8ee"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#863bff"/>
+      <stop offset="1" stop-color="#6a5acd"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="16" fill="#F3EDFF"/>
+  <!-- Digital piano body -->
+  <rect x="60" y="90" width="280" height="70" rx="10" fill="url(#body)"/>
+  <!-- Control panel strip -->
+  <rect x="72" y="100" width="256" height="14" rx="7" fill="url(#accent)" opacity="0.85"/>
+  <circle cx="90" cy="107" r="3.5" fill="#fff" opacity="0.9"/>
+  <circle cx="104" cy="107" r="3.5" fill="#fff" opacity="0.7"/>
+  <circle cx="118" cy="107" r="3.5" fill="#fff" opacity="0.5"/>
+  <rect x="290" y="103" width="30" height="8" rx="4" fill="#0d0d12"/>
+  <!-- Keybed -->
+  <rect x="60" y="160" width="280" height="46" rx="6" fill="url(#keybed)" stroke="#d5d5de" stroke-width="1"/>
+  <!-- White keys -->
+  <g stroke="#c9c9d4" stroke-width="1">
+    <rect x="66" y="164" width="20" height="38" rx="2" fill="#fff"/>
+    <rect x="88" y="164" width="20" height="38" rx="2" fill="#fff"/>
+    <rect x="110" y="164" width="20" height="38" rx="2" fill="#fff"/>
+    <rect x="132" y="164" width="20" height="38" rx="2" fill="#fff"/>
+    <rect x="154" y="164" width="20" height="38" rx="2" fill="#fff"/>
+    <rect x="176" y="164" width="20" height="38" rx="2" fill="#fff"/>
+    <rect x="198" y="164" width="20" height="38" rx="2" fill="#fff"/>
+    <rect x="220" y="164" width="20" height="38" rx="2" fill="#fff"/>
+    <rect x="242" y="164" width="20" height="38" rx="2" fill="#fff"/>
+    <rect x="264" y="164" width="20" height="38" rx="2" fill="#fff"/>
+    <rect x="286" y="164" width="20" height="38" rx="2" fill="#fff"/>
+    <rect x="308" y="164" width="26" height="38" rx="2" fill="#fff"/>
+  </g>
+  <!-- Black keys -->
+  <g fill="#1a1a22">
+    <rect x="84" y="164" width="11" height="24" rx="2"/>
+    <rect x="106" y="164" width="11" height="24" rx="2"/>
+    <rect x="150" y="164" width="11" height="24" rx="2"/>
+    <rect x="172" y="164" width="11" height="24" rx="2"/>
+    <rect x="194" y="164" width="11" height="24" rx="2"/>
+    <rect x="238" y="164" width="11" height="24" rx="2"/>
+    <rect x="260" y="164" width="11" height="24" rx="2"/>
+    <rect x="282" y="164" width="11" height="24" rx="2"/>
+  </g>
+  <!-- Stand legs -->
+  <rect x="90" y="206" width="14" height="52" rx="4" fill="#2d2d38"/>
+  <rect x="296" y="206" width="14" height="52" rx="4" fill="#2d2d38"/>
+  <rect x="80" y="252" width="34" height="8" rx="4" fill="#1a1a22"/>
+  <rect x="286" y="252" width="34" height="8" rx="4" fill="#1a1a22"/>
+  <!-- Sustain pedal -->
+  <rect x="176" y="248" width="48" height="8" rx="4" fill="url(#accent)"/>
+</svg>

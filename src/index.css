@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+/* ============================================
+   SOUND UNLEASHED — DESIGN TOKENS (Tailwind v4)
+   Every custom class used by components is a
+   real utility generated from these tokens.
+   ============================================ */
+@theme {
+  /* Surfaces */
+  --color-bg: #f5f0ff;            /* lavender page canvas */
+  --color-bg-muted: #ece5fb;     /* muted hover surface */
+  --color-card: #ffffff;         /* white content cards */
+  --color-lavender: #eee5ff;      /* secondary lavender (chips, active nav) */
+  --color-lavender-soft: #f8f4ff; /* soft tinted section panels */
+
+  /* Brand */
+  --color-brand-primary: #863bff;      /* vibrant purple */
+  --color-brand-primary-dark: #6d28d9; /* strong hover purple */
+  --color-brand-deep: #251036;         /* deep aubergine */
+  --color-brand-dark: #39205c;         /* dark violet */
+
+  /* Text */
+  --color-text: #281e35;
+  --color-heading: #251036;
+  --color-muted-foreground: #71677f;
+
+  /* Borders */
+  --color-border: #e3d8f2;
+  --color-border-strong: #d5c6ee;
+
+  /* Shadows */
+  --shadow-card-sm: 0 1px 2px rgba(37, 16, 54, 0.06);
+  --shadow-card: 0 1px 2px rgba(37, 16, 54, 0.05), 0 4px 16px rgba(37, 16, 54, 0.07);
+  --shadow-card-lg: 0 4px 8px rgba(37, 16, 54, 0.05), 0 16px 40px rgba(37, 16, 54, 0.13);
+
+  /* Typography */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* ============================================
+   HERO SURFACE
+   A real gradient: deep aubergine → dark
+   violet → vibrant purple highlight.
+   ============================================ */
+.hero-surface {
+  background-image:
+    radial-gradient(ellipse 55% 70% at 88% 12%, rgba(134, 59, 255, 0.38), transparent 62%),
+    linear-gradient(135deg, #251036 0%, #39205c 52%, #863bff 118%);
+}
+
+/* ============================================
+   BASE
+   IMPORTANT: these rules live in @layer base so
+   that Tailwind's utilities layer (declared
+   after `base`) can override the reset. An
+   UNLAYERED `* { margin: 0 }` would otherwise
+   beat `.mx-auto`, `.p-*`, `.h-full`, etc. and
+   push every centered container to the left.
+   ============================================ */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    background-color: var(--color-bg);
+  }
+
+  html,
+  body,
+  #root {
+    width: 100%;
+    min-height: 100%;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-bg);
+    /* Subtle brand glow at the top of every page */
+    background-image: radial-gradient(ellipse 80% 45% at 50% -8%, rgba(134, 59, 255, 0.07), transparent);
+    background-repeat: no-repeat;
+    color: var(--color-text);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  button {
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}

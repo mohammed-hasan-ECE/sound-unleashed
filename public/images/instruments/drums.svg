@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="dshell" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#863bff"/>
+      <stop offset="1" stop-color="#5b2bb8"/>
+    </linearGradient>
+    <linearGradient id="dhead" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f5f2fa"/>
+      <stop offset="1" stop-color="#d8d2e8"/>
+    </linearGradient>
+    <linearGradient id="dcym" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d9b96a"/>
+      <stop offset="1" stop-color="#a8862f"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="16" fill="#F3EDFF"/>
+  <!-- Ride cymbal (left) -->
+  <ellipse cx="98" cy="128" rx="52" ry="14" fill="url(#dcym)"/>
+  <ellipse cx="98" cy="124" rx="52" ry="14" fill="#e8cd85"/>
+  <rect x="95" y="126" width="6" height="76" fill="#8a8a96" rx="3"/>
+  <!-- Hi-hat (right) -->
+  <ellipse cx="308" cy="150" rx="36" ry="10" fill="url(#dcym)"/>
+  <ellipse cx="308" cy="146" rx="36" ry="10" fill="#e8cd85"/>
+  <rect x="305" y="148" width="6" height="70" fill="#8a8a96" rx="3"/>
+  <!-- Snare drum -->
+  <rect x="156" y="96" width="88" height="44" rx="6" fill="url(#dshell)"/>
+  <ellipse cx="200" cy="96" rx="44" ry="10" fill="url(#dhead)"/>
+  <g stroke="#c4bcda" stroke-width="1.5" opacity="0.7">
+    <line x1="162" y1="100" x2="238" y2="100"/>
+    <line x1="160" y1="112" x2="240" y2="112"/>
+    <line x1="160" y1="126" x2="240" y2="126"/>
+  </g>
+  <rect x="150" y="140" width="6" height="58" fill="#8a8a96" rx="3"/>
+  <rect x="244" y="140" width="6" height="58" fill="#8a8a96" rx="3"/>
+  <!-- Kick drum -->
+  <circle cx="200" cy="212" r="58" fill="url(#dshell)" stroke="#3d1f7a" stroke-width="3"/>
+  <circle cx="200" cy="212" r="44" fill="url(#dhead)"/>
+  <circle cx="200" cy="212" r="44" stroke="#863bff" stroke-width="2.5" fill="none" opacity="0.5"/>
+  <!-- Kick logo dot -->
+  <circle cx="200" cy="212" r="7" fill="#863bff" opacity="0.35"/>
+  <!-- Kick legs -->
+  <rect x="150" y="262" width="12" height="8" rx="3" fill="#5b2bb8"/>
+  <rect x="238" y="262" width="12" height="8" rx="3" fill="#5b2bb8"/>
+  <!-- Drum sticks -->
+  <line x1="60" y1="270" x2="120" y2="240" stroke="#b0762f" stroke-width="6" stroke-linecap="round"/>
+  <line x1="340" y1="272" x2="280" y2="244" stroke="#b0762f" stroke-width="6" stroke-linecap="round"/>
+</svg>

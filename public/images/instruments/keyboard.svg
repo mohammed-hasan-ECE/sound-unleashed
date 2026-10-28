@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="kshell" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3d3d47"/>
+      <stop offset="1" stop-color="#1a1a22"/>
+    </linearGradient>
+    <linearGradient id="kacc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#863bff"/>
+      <stop offset="1" stop-color="#47bfff"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="16" fill="#F3EDFF"/>
+  <!-- Keyboard body -->
+  <rect x="46" y="84" width="308" height="120" rx="12" fill="url(#kshell)"/>
+  <!-- Speaker grills -->
+  <g fill="#0d0d12" opacity="0.8">
+    <circle cx="70" cy="112" r="2"/><circle cx="80" cy="112" r="2"/><circle cx="90" cy="112" r="2"/>
+    <circle cx="70" cy="122" r="2"/><circle cx="80" cy="122" r="2"/><circle cx="90" cy="122" r="2"/>
+    <circle cx="70" cy="132" r="2"/><circle cx="80" cy="132" r="2"/><circle cx="90" cy="132" r="2"/>
+  </g>
+  <!-- LCD display -->
+  <rect x="116" y="98" width="90" height="32" rx="6" fill="#071a12" stroke="#3d3d47" stroke-width="2"/>
+  <text x="161" y="119" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#47e0a0" text-anchor="middle">GRAND</text>
+  <!-- Function buttons -->
+  <g>
+    <rect x="224" y="100" width="24" height="12" rx="6" fill="#2d2d38" stroke="#4a4a56" stroke-width="1"/>
+    <rect x="254" y="100" width="24" height="12" rx="6" fill="#2d2d38" stroke="#4a4a56" stroke-width="1"/>
+    <rect x="284" y="100" width="24" height="12" rx="6" fill="#2d2d38" stroke="#4a4a56" stroke-width="1"/>
+    <rect x="224" y="120" width="24" height="12" rx="6" fill="#863bff" opacity="0.8"/>
+    <rect x="254" y="120" width="24" height="12" rx="6" fill="#2d2d38" stroke="#4a4a56" stroke-width="1"/>
+    <rect x="284" y="120" width="24" height="12" rx="6" fill="#2d2d38" stroke="#4a4a56" stroke-width="1"/>
+  </g>
+  <!-- Keys -->
+  <rect x="58" y="146" width="284" height="48" rx="6" fill="#e8e8ee"/>
+  <g fill="#fff" stroke="#c9c9d4" stroke-width="1">
+    <rect x="62" y="150" width="20" height="40" rx="2"/>
+    <rect x="84" y="150" width="20" height="40" rx="2"/>
+    <rect x="106" y="150" width="20" height="40" rx="2"/>
+    <rect x="128" y="150" width="20" height="40" rx="2"/>
+    <rect x="150" y="150" width="20" height="40" rx="2"/>
+    <rect x="172" y="150" width="20" height="40" rx="2"/>
+    <rect x="194" y="150" width="20" height="40" rx="2"/>
+    <rect x="216" y="150" width="20" height="40" rx="2"/>
+    <rect x="238" y="150" width="20" height="40" rx="2"/>
+    <rect x="260" y="150" width="20" height="40" rx="2"/>
+    <rect x="282" y="150" width="20" height="40" rx="2"/>
+    <rect x="304" y="150" width="20" height="40" rx="2"/>
+    <rect x="326" y="150" width="12" height="40" rx="2"/>
+  </g>
+  <g fill="#1a1a22">
+    <rect x="80" y="150" width="10" height="24" rx="1.5"/>
+    <rect x="102" y="150" width="10" height="24" rx="1.5"/>
+    <rect x="146" y="150" width="10" height="24" rx="1.5"/>
+    <rect x="168" y="150" width="10" height="24" rx="1.5"/>
+    <rect x="190" y="150" width="10" height="24" rx="1.5"/>
+    <rect x="234" y="150" width="10" height="24" rx="1.5"/>
+    <rect x="256" y="150" width="10" height="24" rx="1.5"/>
+    <rect x="278" y="150" width="10" height="24" rx="1.5"/>
+    <rect x="300" y="150" width="10" height="24" rx="1.5"/>
+  </g>
+  <!-- Accent edge -->
+  <rect x="46" y="84" width="308" height="5" rx="2.5" fill="url(#kacc)" opacity="0.9"/>
+  <!-- Stand -->
+  <rect x="120" y="204" width="10" height="52" rx="4" fill="#2d2d38"/>
+  <rect x="270" y="204" width="10" height="52" rx="4" fill="#2d2d38"/>
+  <rect x="110" y="252" width="30" height="8" rx="4" fill="#1a1a22"/>
+  <rect x="260" y="252" width="30" height="8" rx="4" fill="#1a1a22"/>
+</svg>

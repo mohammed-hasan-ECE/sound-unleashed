@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="gtop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d9a35b"/>
+      <stop offset="1" stop-color="#b0762f"/>
+    </linearGradient>
+    <linearGradient id="gside" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9c5c24"/>
+      <stop offset="1" stop-color="#7a4419"/>
+    </linearGradient>
+    <linearGradient id="gneck" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5a3a1a"/>
+      <stop offset="1" stop-color="#3d2711"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="16" fill="#F3EDFF"/>
+  <!-- Neck -->
+  <rect x="196" y="24" width="12" height="130" fill="url(#gneck)" rx="2"/>
+  <!-- Frets -->
+  <g stroke="#c9c9d4" stroke-width="1.5">
+    <line x1="196" y1="46" x2="208" y2="46"/>
+    <line x1="196" y1="66" x2="208" y2="66"/>
+    <line x1="196" y1="86" x2="208" y2="86"/>
+    <line x1="196" y1="106" x2="208" y2="106"/>
+    <line x1="196" y1="126" x2="208" y2="126"/>
+  </g>
+  <!-- Headstock -->
+  <path d="M194 24 L210 24 L212 8 L192 8 Z" fill="url(#gneck)"/>
+  <circle cx="198" cy="14" r="2.5" fill="#e8e8ee"/>
+  <circle cx="206" cy="16" r="2.5" fill="#e8e8ee"/>
+  <!-- Body -->
+  <path d="M202 130 C202 130 168 138 148 158 C128 178 118 206 130 234 C142 262 172 274 202 268 C232 274 262 262 274 234 C286 206 276 178 256 158 C236 138 202 130 202 130 Z" fill="url(#gtop)" stroke="url(#gside)" stroke-width="4"/>
+  <!-- Sound hole -->
+  <circle cx="202" cy="196" r="26" fill="#2d1a08"/>
+  <circle cx="202" cy="196" r="26" stroke="#d9a35b" stroke-width="2" fill="none"/>
+  <!-- Rosette -->
+  <circle cx="202" cy="196" r="31" stroke="#8a5a24" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <!-- Bridge -->
+  <rect x="176" y="242" width="52" height="10" rx="4" fill="#3d2711"/>
+  <!-- Strings -->
+  <g stroke="#e8e8ee" stroke-width="1" opacity="0.85">
+    <line x1="199" y1="16" x2="199" y2="246"/>
+    <line x1="202" y1="16" x2="202" y2="246"/>
+    <line x1="205" y1="16" x2="205" y2="246"/>
+  </g>
+  <g stroke="#c9a86a" stroke-width="1.5" opacity="0.9">
+    <line x1="195" y1="24" x2="195" y2="246"/>
+    <line x1="209" y1="24" x2="209" y2="246"/>
+  </g>
+</svg>

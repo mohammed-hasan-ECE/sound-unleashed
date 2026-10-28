@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <rect width="200" height="200" rx="12" fill="#f8f4ff"/>
+  <circle cx="100" cy="80" r="40" fill="#ede6ff"/>
+  <path d="M90 120 Q100 140 110 120" stroke="#863bff" stroke-width="3" fill="none"/>
+  <text x="100" y="180" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+        font-size="14" font-weight="500" fill="#6b6375" text-anchor="middle">
+    Product Image
+  </text>
+</svg>
