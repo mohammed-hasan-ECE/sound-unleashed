@@ -91,11 +91,11 @@ export function HomePage() {
               <Button
                 size="lg"
                 asChild
-                className="bg-white text-brand-deep shadow-lg hover:bg-lavender focus-visible:ring-white focus-visible:ring-offset-brand-deep"
+                className="bg-white text-brand-deep shadow-lg hover:bg-brand-lavender focus-visible:ring-white focus-visible:ring-offset-brand-deep"
               >
                 <Link to="/purchase">
                   Explore Instruments
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>
               <a
@@ -103,7 +103,7 @@ export function HomePage() {
                 className="group inline-flex min-h-11 items-center gap-2 rounded-xl px-2 text-sm font-semibold text-white/85 underline-offset-4 transition-colors hover:text-white hover:underline"
               >
                 Browse Categories
-                <ArrowDown className="h-4 w-4 transition-transform duration-200 group-hover:translate-y-0.5" />
+                <ArrowDown className="h-4 w-4 transition-transform duration-200 group-hover:translate-y-0.5" aria-hidden="true" />
               </a>
             </div>
           </div>
@@ -151,7 +151,7 @@ export function HomePage() {
           <div className="flex h-full min-w-0 flex-col gap-5 rounded-2xl border border-border bg-card p-5 shadow-card sm:p-7">
             <div className="flex items-center gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-lavender">
-                <Music className="h-6 w-6 text-brand-primary" />
+                <Music className="h-6 w-6 text-brand-primary" aria-hidden="true" />
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-heading">
@@ -173,7 +173,10 @@ export function HomePage() {
                   <img
                     src={image}
                     alt={`${name} category`}
+                    width={400}
+                    height={300}
                     loading="lazy"
+                    decoding="async"
                     className="aspect-[4/3] h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <span className="flex min-h-12 items-center justify-center px-3 py-2 text-center text-sm font-medium text-heading">
@@ -188,7 +191,7 @@ export function HomePage() {
               <Button asChild variant="outline" className="w-full sm:w-auto">
                 <Link to="/purchase">
                   Browse Classical
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>
             </div>
@@ -198,7 +201,7 @@ export function HomePage() {
           <div className="flex h-full min-w-0 flex-col gap-5 rounded-2xl border border-border bg-card p-5 shadow-card sm:p-7">
             <div className="flex items-center gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-lavender">
-                <Headphones className="h-6 w-6 text-brand-primary" />
+                <Headphones className="h-6 w-6 text-brand-primary" aria-hidden="true" />
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-heading">
@@ -220,7 +223,10 @@ export function HomePage() {
                   <img
                     src={image}
                     alt={`${name} category`}
+                    width={400}
+                    height={300}
                     loading="lazy"
+                    decoding="async"
                     className="aspect-[4/3] h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   <span className="flex min-h-12 items-center justify-center px-2 py-2 text-center text-xs font-medium text-heading sm:text-sm">
@@ -235,7 +241,7 @@ export function HomePage() {
               <Button asChild variant="outline" className="w-full sm:w-auto">
                 <Link to="/purchase">
                   Browse Electronic
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>
             </div>
@@ -267,11 +273,11 @@ export function HomePage() {
               <Button
                 size="lg"
                 asChild
-                className="bg-white text-brand-deep shadow-lg hover:bg-lavender focus-visible:ring-white focus-visible:ring-offset-brand-deep"
+                className="bg-white text-brand-deep shadow-lg hover:bg-brand-lavender focus-visible:ring-white focus-visible:ring-offset-brand-deep"
               >
                 <Link to="/finder">
                   Help Me Find My Sound
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>
               <span className="text-xs text-white/60">
@@ -328,7 +334,7 @@ export function HomePage() {
           <Button variant="outline" size="sm" asChild className="hidden shrink-0 sm:inline-flex">
             <Link to="/purchase">
               View All
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
             </Link>
           </Button>
         </div>
@@ -385,7 +391,7 @@ export function HomePage() {
               className="flex h-full flex-col items-center gap-3 rounded-2xl border border-border bg-card p-6 text-center shadow-card"
             >
               <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-lavender">
-                <Icon className="h-6 w-6 text-brand-primary" />
+                <Icon className="h-6 w-6 text-brand-primary" aria-hidden="true" />
                 <span className="absolute top-0 right-0 flex h-5 w-5 -translate-y-1/2 translate-x-1/3 items-center justify-center rounded-full bg-brand-primary text-xs font-bold text-white">
                   {step}
                 </span>
@@ -412,7 +418,7 @@ export function HomePage() {
         <Button asChild size="lg">
           <Link to="/about">
             Learn More About Us
-            <ArrowRight className="ml-2 h-4 w-4" />
+            <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
           </Link>
         </Button>
       </section>

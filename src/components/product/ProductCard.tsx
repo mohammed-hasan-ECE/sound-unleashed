@@ -54,7 +54,10 @@ export function ProductCard({
             <img
               src={resolvedImage}
               alt={`${category} — ${brand} ${name}`}
+              width={400}
+              height={300}
               loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
             />
           ) : (
@@ -87,11 +90,11 @@ export function ProductCard({
         <h3 className="line-clamp-2 text-lg leading-snug font-semibold text-heading">
           {name}
         </h3>
-        <p className="text-sm font-semibold text-brand-primary">{brand}</p>
+        <p className="text-sm font-semibold text-accent-text">{brand}</p>
         <p className="line-clamp-2 text-sm text-muted-foreground">{description}</p>
 
         {reason && (
-          <p className="rounded-xl bg-lavender-soft px-3 py-2 text-xs leading-relaxed text-brand-primary-dark">
+          <p className="rounded-xl bg-lavender-soft px-3 py-2 text-xs leading-relaxed text-accent-text">
             <Sparkles
               className="mr-1.5 inline h-3.5 w-3.5 align-[-2px]"
               aria-hidden="true"
@@ -116,8 +119,8 @@ export function ProductCard({
               onClick={() => toggleLike(id)}
               className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border transition-colors ${
                 isLiked(id)
-                  ? 'border-brand-primary bg-brand-primary/10 text-brand-primary'
-                  : 'border-border text-muted-foreground hover:border-brand-primary hover:text-brand-primary'
+                  ? 'border-brand-primary bg-brand-primary/10 text-accent-text'
+                  : 'border-border text-muted-foreground hover:border-brand-primary hover:text-accent-text'
               }`}
               aria-label={isLiked(id) ? 'Unlike product' : 'Like product'}
               aria-pressed={isLiked(id)}

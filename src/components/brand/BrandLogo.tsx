@@ -12,11 +12,13 @@ import { useId } from 'react'
  * defined exactly once, so the brand can never drift between surfaces.
  */
 
-type BrandLogoVariant = 'header' | 'hero' | 'footer'
+type BrandLogoVariant = 'header' | 'hero' | 'intro' | 'footer'
 
 interface BrandLogoProps {
   variant?: BrandLogoVariant
   className?: string
+  /** Extra classes for the wordmark only, e.g. its intro reveal animation. */
+  wordmarkClassName?: string
 }
 
 interface VariantStyle {
@@ -27,12 +29,13 @@ interface VariantStyle {
 }
 
 const VARIANTS: Record<BrandLogoVariant, VariantStyle> = {
-  // Compact, dark-on-light: sticky header.
+  // Compact: sticky header. Both words use theme-aware tokens so the wordmark
+  // keeps AA contrast on the lavender canvas and on the dark plum canvas.
   header: {
     symbol: 'h-10 w-10',
     wordmark: 'text-xl',
-    firstWord: 'text-brand-deep',
-    secondWord: 'text-brand-primary',
+    firstWord: 'text-heading',
+    secondWord: 'text-accent-text',
   },
   // Large, light-on-dark: the hero brand lockup.
   hero: {
@@ -41,16 +44,27 @@ const VARIANTS: Record<BrandLogoVariant, VariantStyle> = {
     firstWord: 'text-white',
     secondWord: 'text-brand-light',
   },
+  // Extra large, light-on-dark: the opening intro screen.
+  intro: {
+    symbol: 'h-16 w-16 sm:h-24 sm:w-24',
+    wordmark: 'text-3xl sm:text-5xl',
+    firstWord: 'text-white',
+    secondWord: 'text-brand-light',
+  },
   // Mid-size, light-on-dark: footer.
   footer: {
     symbol: 'h-12 w-12',
     wordmark: 'text-2xl',
     firstWord: 'text-white',
-    secondWord: 'text-lavender',
+    secondWord: 'text-brand-lavender',
   },
 }
 
-export function BrandLogo({ variant = 'header', className = '' }: BrandLogoProps) {
+export function BrandLogo({
+  variant = 'header',
+  className = '',
+  wordmarkClassName = '',
+}: BrandLogoProps) {
   const style = VARIANTS[variant]
 
   // Unique gradient ids: several logos (header + hero + footer) can share a
@@ -105,7 +119,9 @@ export function BrandLogo({ variant = 'header', className = '' }: BrandLogoProps
       </svg>
 
       {/* ===== Wordmark ===== */}
-      <span className={`flex items-baseline whitespace-nowrap font-semibold tracking-tight ${style.wordmark}`}>
+      <span
+        className={`flex items-baseline whitespace-nowrap font-semibold tracking-tight ${style.wordmark} ${wordmarkClassName}`}
+      >
         <span className={style.firstWord}>Sound</span>
         <span className={`ml-1.5 font-extrabold ${style.secondWord}`}>Unleashed</span>
       </span>

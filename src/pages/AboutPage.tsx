@@ -142,7 +142,7 @@ export function AboutPage() {
                 {initials}
               </div>
               <h3 className="mt-1 text-base font-semibold text-heading">{name}</h3>
-              <p className="text-xs font-medium text-brand-primary">{role}</p>
+              <p className="text-xs font-medium text-accent-text">{role}</p>
               <p className="mx-auto max-w-[26ch] text-xs leading-relaxed text-muted-foreground">
                 {note}
               </p>

@@ -2,6 +2,11 @@ interface ProductImageProps {
   imageUrl: string | null
   alt: string
   className?: string
+  /**
+   * Marks the image as part of the first viewport. Above-the-fold imagery
+   * should load eagerly and hint high priority; everything else stays lazy.
+   */
+  priority?: boolean
 }
 
 /**
@@ -9,7 +14,12 @@ interface ProductImageProps {
  * Falls back to a neutral, intentional placeholder area when no image
  * resolves — never a broken image or crude drawing.
  */
-export function ProductImage({ imageUrl, alt, className = '' }: ProductImageProps) {
+export function ProductImage({
+  imageUrl,
+  alt,
+  className = '',
+  priority = false,
+}: ProductImageProps) {
   return (
     <div
       className={`relative overflow-hidden rounded-2xl border border-border bg-lavender-soft ${className}`}
@@ -18,7 +28,9 @@ export function ProductImage({ imageUrl, alt, className = '' }: ProductImageProp
         <img
           src={imageUrl}
           alt={alt}
-          loading="lazy"
+          loading={priority ? 'eager' : 'lazy'}
+          fetchPriority={priority ? 'high' : 'auto'}
+          decoding="async"
           className="h-full w-full object-cover"
         />
       ) : (

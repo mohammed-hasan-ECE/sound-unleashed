@@ -15,10 +15,15 @@
 
   /* Brand */
   --color-brand-primary: #863bff;      /* vibrant purple */
-  --color-brand-primary-dark: #6d28d9; /* strong hover purple */
+  --color-brand-primary-dark: #6d28d9; /* solid purple: button hover only */
   --color-brand-deep: #251036;         /* deep aubergine */
   --color-brand-dark: #39205c;         /* dark violet */
   --color-brand-light: #b79cff;        /* light violet for text on dark surfaces */
+  --color-brand-lavender: #eee5ff;     /* fixed pale lavender for deep-aubergine surfaces */
+
+  /* Accent text: readable violet for labels, chips, and small accent copy.
+     Separate from brand-primary, which doubles as a button fill. */
+  --color-accent-text: #6d28d9;
 
   /* Text */
   --color-text: #281e35;
@@ -37,6 +42,49 @@
   /* Typography */
   --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* ============================================
+   LIGHT / DARK APPEARANCE
+   Defaults above are the approved light
+   identity. The `dark` class is toggled on
+   <html> by the theme provider (and by the
+   pre-paint script in index.html), so every
+   semantic token below is swapped in one
+   place instead of adding dark: variants to
+   individual components.
+   ============================================ */
+:root {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+
+  /* Surfaces — deep aubergine canvas with plum elevation */
+  --color-bg: #160c22;
+  --color-bg-muted: #2a1839;
+  --color-card: #20122e;
+  --color-lavender: #382151;
+  --color-lavender-soft: #1c0f28;
+
+  /* Brand accents */
+  --color-brand-primary-dark: #7a2ef2; /* button hover */
+  --color-accent-text: #cbb2ff;
+
+  /* Text */
+  --color-text: #ece4f6;
+  --color-heading: #f7f2ff;
+  --color-muted-foreground: #b6a5cb;
+
+  /* Borders */
+  --color-border: #3b284f;
+  --color-border-strong: #523a6c;
+
+  /* Shadows read as depth on dark surfaces */
+  --shadow-card-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 6px 20px rgba(0, 0, 0, 0.45);
+  --shadow-card-lg: 0 6px 12px rgba(0, 0, 0, 0.4), 0 20px 50px rgba(0, 0, 0, 0.6);
 }
 
 /* ============================================
@@ -119,6 +167,119 @@
 
 @media (prefers-reduced-motion: reduce) {
   .su-step-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ============================================
+   BRAND INTRO
+   A short, one-shot sequence for the homepage
+   first-run overlay. Everything stops after it
+   runs: no looping animation and no audio.
+   Total reveal: ~1.6s, then the homepage takes
+   over.
+   ============================================ */
+@keyframes su-intro-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes su-intro-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes su-intro-logo-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes su-intro-wordmark-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes su-intro-wave {
+  0% {
+    opacity: 0.25;
+    transform: scaleY(0.2);
+  }
+  45% {
+    opacity: 0.95;
+    transform: scaleY(1);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scaleY(0.55);
+  }
+}
+
+@keyframes su-intro-glow {
+  0% {
+    opacity: 0;
+    transform: scale(0.72);
+  }
+  55% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+}
+
+.su-intro {
+  animation: su-intro-in 0.35s ease-out both;
+}
+
+.su-intro.is-closing {
+  animation: su-intro-out 0.26s ease-in both;
+}
+
+.su-intro-logo {
+  animation: su-intro-logo-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.su-intro-wordmark {
+  display: inline-block;
+  animation: su-intro-wordmark-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+
+.su-intro-glow {
+  animation: su-intro-glow 1.4s ease-out 0.05s both;
+}
+
+.su-intro-tagline {
+  animation: su-intro-wordmark-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both;
+}
+
+.su-intro-bar {
+  transform-origin: center;
+  animation: su-intro-wave 1.1s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .su-intro,
+  .su-intro.is-closing,
+  .su-intro-logo,
+  .su-intro-wordmark,
+  .su-intro-glow,
+  .su-intro-tagline,
+  .su-intro-bar {
     animation: none;
     opacity: 1;
     transform: none;

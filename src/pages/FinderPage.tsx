@@ -213,7 +213,7 @@ export function FinderPage() {
           {/* Progress */}
           <div className="mb-6">
             <div className="flex flex-wrap items-baseline justify-between gap-2">
-              <p className="text-xs font-semibold text-brand-primary-dark">
+              <p className="text-xs font-semibold text-accent-text">
                 Step {step} of 3
               </p>
               <p className="text-xs font-medium text-muted-foreground">{STEP_TITLES[step - 1]}</p>
@@ -305,7 +305,7 @@ export function FinderPage() {
                           className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-colors ${
                             selected
                               ? 'bg-brand-primary text-white'
-                              : 'bg-lavender text-brand-primary'
+                              : 'bg-lavender text-accent-text'
                           }`}
                         >
                           <Icon className="h-5 w-5" aria-hidden="true" />
@@ -461,7 +461,7 @@ export function FinderPage() {
           <div className="rounded-3xl border border-border bg-lavender-soft p-6 sm:p-8">
             <div className="flex flex-wrap items-start justify-between gap-4">
               <div className="max-w-2xl">
-                <p className="text-[11px] font-semibold tracking-[0.16em] text-brand-primary-dark uppercase">
+                <p className="text-[11px] font-semibold tracking-[0.16em] text-accent-text uppercase">
                   Your matches
                 </p>
                 <h2

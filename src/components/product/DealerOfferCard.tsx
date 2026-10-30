@@ -38,11 +38,17 @@ export function DealerOfferCard({
       <div className="flex items-start justify-between gap-2">
         <div className="flex min-w-0 items-center gap-2">
           {isVerified && (
-            <BadgeCheck className="h-4 w-4 shrink-0 text-brand-primary" aria-label="Verified listing" />
+            <>
+              <BadgeCheck
+                className="h-4 w-4 shrink-0 text-brand-primary"
+                aria-hidden="true"
+              />
+              <span className="sr-only">Verified listing:</span>
+            </>
           )}
-          <h4 className="truncate text-sm font-semibold text-heading">{dealerName}</h4>
+          <h3 className="truncate text-sm font-semibold text-heading">{dealerName}</h3>
         </div>
-        <span className="shrink-0 rounded-full bg-lavender px-2.5 py-1 text-xs font-medium text-brand-primary-dark">
+        <span className="shrink-0 rounded-full bg-lavender px-2.5 py-1 text-xs font-medium text-accent-text">
           {pageType === 'collection' ? 'Collection' : 'Product'}
         </span>
       </div>
@@ -53,7 +59,7 @@ export function DealerOfferCard({
 
       {/* Price + action */}
       <div className="mt-auto flex flex-wrap items-center justify-between gap-3 pt-1">
-        {price ? (
+        {price !== null ? (
           <span className="text-base font-semibold text-heading">
             {currency} {price.toLocaleString('en-IN')}
             <span className="ml-1 text-xs font-normal text-muted-foreground">
@@ -76,7 +82,11 @@ export function DealerOfferCard({
               rel="noopener noreferrer"
             >
               Visit Dealer
-              <ExternalLink className="ml-1.5 h-3.5 w-3.5" />
+              <span className="sr-only">
+                {' '}
+                at {dealerName} (opens in a new tab)
+              </span>
+              <ExternalLink className="ml-1.5 h-3.5 w-3.5" aria-hidden="true" />
             </a>
           </Button>
         )}

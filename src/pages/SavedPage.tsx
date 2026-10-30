@@ -46,26 +46,31 @@ export function SavedPage() {
       </div>
 
       {/* Shared product grid — save control toggles items out of this list */}
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {savedProducts.map((product) => {
-          const { price, priceType } = getDisplayPrice(product)
+      <section aria-labelledby="saved-products-heading">
+        <h2 id="saved-products-heading" className="sr-only">
+          Saved products
+        </h2>
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {savedProducts.map((product) => {
+            const { price, priceType } = getDisplayPrice(product)
 
-          return (
-            <ProductCard
-              key={product.id}
-              id={product.id}
-              slug={product.slug}
-              name={product.name}
-              brand={product.brand}
-              category={product.category}
-              description={product.description}
-              imageUrl={product.imageUrl}
-              price={price}
-              priceType={priceType}
-            />
-          )
-        })}
-      </div>
+            return (
+              <ProductCard
+                key={product.id}
+                id={product.id}
+                slug={product.slug}
+                name={product.name}
+                brand={product.brand}
+                category={product.category}
+                description={product.description}
+                imageUrl={product.imageUrl}
+                price={price}
+                priceType={priceType}
+              />
+            )
+          })}
+        </div>
+      </section>
     </div>
   )
 }

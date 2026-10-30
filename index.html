@@ -4,6 +4,30 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Apply the stored appearance before the first paint so the page never
+      // flashes the wrong theme. Storage can be unavailable (private mode,
+      // blocked cookies); in that case fall back to the system preference.
+      ;(function () {
+        var key = 'sound-unleashed:theme:v1'
+        var stored = null
+        try {
+          stored = window.localStorage.getItem(key)
+        } catch (error) {
+          stored = null
+        }
+        if (stored !== 'light' && stored !== 'dark' && stored !== 'system') {
+          stored = null
+        }
+        var prefersDark =
+          window.matchMedia &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches
+        var dark = stored === 'dark' || ((stored === null || stored === 'system') && prefersDark)
+        var root = document.documentElement
+        if (dark) root.classList.add('dark')
+        root.style.colorScheme = dark ? 'dark' : 'light'
+      })()
+    </script>
     <meta name="theme-color" content="#251036" />
     <meta
       name="description"

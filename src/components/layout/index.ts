@@ -1,5 +1,6 @@
 export { ThemeProvider } from './theme-provider'
 export { useTheme } from './use-theme'
+export { ThemeToggle } from './ThemeToggle'
 export { Header } from './Header'
 export { Footer } from './Footer'
 export { SiteLayout } from './SiteLayout'

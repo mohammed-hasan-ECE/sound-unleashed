@@ -82,6 +82,7 @@ export function CartPage() {
 
       {/* Items */}
       <div className="flex flex-col gap-4">
+        <h2 className="sr-only">Cart items</h2>
         {cartItems.map(function (item) {
           const priceInfo = getPriceInfo(item.product as Product)
           const itemImage = resolveProductImage(item.product.imageUrl, item.product.category)
@@ -100,6 +101,10 @@ export function CartPage() {
                   <img
                     src={itemImage}
                     alt={`${item.product.category} — ${item.product.brand} ${item.product.name}`}
+                    width={80}
+                    height={80}
+                    loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-cover"
                   />
                 ) : (
@@ -111,10 +116,10 @@ export function CartPage() {
 
               {/* Details */}
               <div className="min-w-0 flex-1">
-                <p className="text-xs font-semibold uppercase tracking-wide text-brand-primary">
+                <p className="text-xs font-semibold uppercase tracking-wide text-accent-text">
                   {item.product.brand}
                 </p>
-                <h3 className="truncate text-base font-semibold text-heading">
+                <h3 className="line-clamp-2 text-base leading-snug font-semibold text-heading">
                   {item.product.name}
                 </h3>
                 {priceInfo.listingPrice !== null ? (
@@ -135,9 +140,9 @@ export function CartPage() {
                   size="sm"
                   className="h-9 w-9 p-0"
                   onClick={() => updateCartQuantity(item.productId, item.quantity - 1)}
-                  aria-label="Decrease quantity"
+                  aria-label={`Decrease quantity for ${item.product.brand} ${item.product.name}`}
                 >
-                  <Minus className="h-4 w-4" />
+                  <Minus className="h-4 w-4" aria-hidden="true" />
                 </Button>
                 <span className="w-8 text-center text-base font-semibold text-heading">
                   {item.quantity}
@@ -147,9 +152,9 @@ export function CartPage() {
                   size="sm"
                   className="h-9 w-9 p-0"
                   onClick={() => updateCartQuantity(item.productId, item.quantity + 1)}
-                  aria-label="Increase quantity"
+                  aria-label={`Increase quantity for ${item.product.brand} ${item.product.name}`}
                 >
-                  <Plus className="h-4 w-4" />
+                  <Plus className="h-4 w-4" aria-hidden="true" />
                 </Button>
               </div>
 
@@ -159,8 +164,9 @@ export function CartPage() {
                 size="sm"
                 className="text-muted-foreground hover:border-red-300 hover:text-red-500"
                 onClick={() => removeFromCart(item.productId)}
+                aria-label={`Remove ${item.product.brand} ${item.product.name} from cart`}
               >
-                <Trash2 className="h-4 w-4" />
+                <Trash2 className="h-4 w-4" aria-hidden="true" />
                 <span className="hidden sm:inline">Remove</span>
               </Button>
             </div>
@@ -172,20 +178,20 @@ export function CartPage() {
       <div className="rounded-2xl border border-border bg-card p-6 shadow-card md:p-8">
         <div className="flex items-center justify-between border-b border-border pb-4">
           <span className="text-lg font-semibold text-heading">Estimated Subtotal:</span>
-          <span className="text-2xl font-bold text-brand-primary-dark">
+          <span className="text-2xl font-bold text-accent-text">
             Rs. {calculateSubtotal().toLocaleString()}
           </span>
         </div>
 
         <div className="flex flex-col gap-3 pt-4">
           <p className="flex items-start gap-2 text-sm text-muted-foreground">
-            <Info className="mt-0.5 h-4 w-4 shrink-0 text-brand-primary" />
+            <Info className="mt-0.5 h-4 w-4 shrink-0 text-brand-primary" aria-hidden="true" />
             This estimated subtotal is based on previously recorded listing prices only.
             Items without recorded listing prices are excluded. This is not a live quotation.
           </p>
 
           {getExcludedCount() > 0 && (
-            <p className="rounded-lg bg-lavender-soft px-4 py-2.5 text-sm text-brand-primary-dark">
+            <p className="rounded-lg bg-lavender-soft px-4 py-2.5 text-sm text-accent-text">
               {getExcludedCount()} cart {getExcludedCount() === 1 ? 'item is' : 'items are'}{' '}
               excluded from this estimate — no eligible recorded listing price.
             </p>

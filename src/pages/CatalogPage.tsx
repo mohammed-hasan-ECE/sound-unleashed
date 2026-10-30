@@ -95,7 +95,7 @@ function AppliedFilter({ label, ariaLabel, onRemove }: AppliedFilterProps) {
       type="button"
       onClick={onRemove}
       aria-label={ariaLabel}
-      className="inline-flex min-h-9 items-center gap-2 rounded-full border border-border-strong bg-lavender px-3 text-xs font-medium text-brand-primary-dark transition-colors hover:border-brand-primary hover:bg-lavender-soft"
+      className="inline-flex min-h-9 items-center gap-2 rounded-full border border-border-strong bg-lavender px-3 text-xs font-medium text-accent-text transition-colors hover:border-brand-primary hover:bg-lavender-soft"
     >
       <span>{label}</span>
       <X className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
@@ -292,7 +292,7 @@ export function CatalogPage() {
               variant="ghost"
               size="sm"
               onClick={clearAllFilters}
-              className="shrink-0 text-brand-primary-dark"
+              className="shrink-0 text-accent-text"
             >
               <X className="mr-1.5 h-4 w-4" aria-hidden="true" />
               Clear all filters
